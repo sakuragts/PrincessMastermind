@@ -3,23 +3,37 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main (String[] args) {
-        Token [] secretCode = null;
+        SecretCode  secretCode = new SecretCode();
+        Token [] tokenCode = new Token[4];
         Token singleToken;
         String tokenColor;
+        String [] userAnswer = new String[4];
         int tokenPosition;
 
-        secretCode = secretCode();
-        singleToken = secretCode[0];
 
-        System.out.println(singleToken.getPosition());
+        secretCode.secretCode();
+        secretCode.getCodeWithTokens();
 
+        for(int i = 1; i < 5; i++)
+        {
+            userAnswer = userInput(i, userAnswer);
+        }
 
+        for (int i = 0; i < 4; i++)
+        {
+            tokenColor = userAnswer[i];
+            System.out.print(tokenColor + ", ");
+        }
+        System.out.println("\n" +
+                secretCode);
+        System.out.println(secretCode.getSingleToken(3));
     }
-
+/*
     public static Token [] secretCode() {
         Token [] secretCode = {null, null, null, null};
         int [] numberCode;
@@ -65,22 +79,20 @@ public class Main {
             }
         }
         return doesContain;
+    }*/
+
+
+    public static String [] userInput(int position, String [] userAnswer) {
+        String usersInput;
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Color list: blue, yellow, green, red, orange");
+
+        System.out.print("\n Enter a color for code position " + position + ": ");
+        usersInput = input.nextLine();
+        userAnswer[position - 1] = usersInput;
+
+        return userAnswer;
     }
 
-
-    public static void testImage() {
-        File testImage = null;
-        BufferedImage bRibbon = null;
-
-        try {
-            testImage = new File("C:\\PrincessMastermind\\src\\yellowribbon.png");
-            bRibbon = ImageIO.read(testImage);
-
-
-            ImageIO.write(bRibbon, "jpg", new File("C:" +
-                    "\\PrincessMastermind\\src\\testImage.jpg"));
-        } catch (IOException e) {
-            System.out.print("Error, no image");
-        }
-    }
 }
