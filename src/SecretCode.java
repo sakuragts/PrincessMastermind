@@ -2,6 +2,7 @@
 public class SecretCode {
 
     private Token [] codeWithTokens;
+    private boolean [] answerCompared = {false, false, false, false};
 
     public SecretCode() {
         this.codeWithTokens = secretCode();
@@ -10,9 +11,7 @@ public class SecretCode {
     public Token [] secretCode()
         {
         Token [] tokenCode = new Token[4];
-        int tokenColor;
         Token token;
-
 
         for(int i = 0; i < 4; i++)
         {
@@ -30,6 +29,22 @@ public class SecretCode {
     public Token getSingleToken(int token)
     {
         return this.codeWithTokens[token];
+    }
+
+    public boolean [] compareAnswerWithCode(String answer)
+    {
+
+        String codeToCompare = "";
+
+        for(int i = 0; i < this.codeWithTokens.length; i++)
+        {
+            codeToCompare += this.codeWithTokens[i];
+            if(answer.equals(codeToCompare))
+            {
+                answerCompared[i] = true;
+            }
+        }
+        return answerCompared;
     }
 
 
