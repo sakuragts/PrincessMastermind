@@ -16,14 +16,12 @@ public class Main {
 
 
         System.out.println("Color list: blue, yellow, green, red, orange");
-
         printAnswer(secretCode, userAnswer);
 
         for(int i = 0; i < userAnswer.length; i++)
         {
-            compareAnswerWithCode(userAnswer[i]);
+            secretCode.compareAnswerWithCode(userAnswer[i]);
         }
-
         //System.out.println(secretCode.getSingleToken(3));
     }
 
@@ -58,7 +56,7 @@ public class Main {
                 secretCode);
     }
 
-    public static boolean [] verifyAnswerColor(String [] userAnswer)
+    /*public static boolean [] verifyAnswerColor(String [] userAnswer)
     {
         boolean [] answersCompared = new boolean[4];
         SecretCode codeToString = new SecretCode();
@@ -78,5 +76,5 @@ public class Main {
 
         return true;
     }
-
+    */
 }
