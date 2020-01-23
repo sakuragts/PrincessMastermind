@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-//test git commit
+//test git commit2
 public class Main {
 
     public static void main (String[] args) {
