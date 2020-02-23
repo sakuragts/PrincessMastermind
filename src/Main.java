@@ -4,17 +4,19 @@ import java.util.Scanner;
 public class Main {
 
     public static void main (String[] args) {
-        SecretCode  secretCode = new SecretCode();
-        Token [] tokenCode = new Token[4];
+        SecretCode secretCode = new SecretCode();
+        Token[] tokenCode = new Token[4];
         Token singleToken;
         String tokenColor;
         String singleAnswer;
-        String [] userAnswer = new String[4];
+        UserAnswer userAnswer = new UserAnswer();
         int tokenPosition;
 
-        userAnswer = UserAnswer.userInput();
+        userAnswer.makingUserAnswerList();
 
+        System.out.println(userAnswer);
 
+ /*
         System.out.println("Color list: blue, yellow, green, red, orange");
         printAnswer(secretCode, userAnswer);
 
@@ -66,6 +68,7 @@ public class Main {
         return answerCompared;
 
         return true;
+    }*/
     }
-    */
+
 }
