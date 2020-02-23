@@ -20,7 +20,9 @@ public class UserAnswer {
 
     public String [] makingUserAnswerList() {
         for (this.position = 1; this.position < 5; this.position++) {
-
+            userInput(this.position);
+            userAnswerList[this.position] = userAnswer;
         }
+        return this.userAnswerList;
     }
 }
