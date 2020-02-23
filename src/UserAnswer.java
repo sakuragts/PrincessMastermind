@@ -2,8 +2,9 @@ import java.util.Scanner;
 
 public class UserAnswer {
 
-    private String userAnswerList [];
+    private String [] userAnswerList;
     private String userAnswer;
+    private int position;
 
     public String [] getUserAnswer() {
         return userAnswerList;
@@ -15,5 +16,11 @@ public class UserAnswer {
         System.out.print("\n Enter a color for code position " + position + ": ");
         this.userAnswer = input.nextLine();
         return this.userAnswer;
+    }
+
+    public String [] makingUserAnswerList() {
+        for (this.position = 1; this.position < 5; this.position++) {
+
+        }
     }
 }
