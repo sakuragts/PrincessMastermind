@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-//test git commit2
+
 public class Main {
 
     public static void main (String[] args) {
@@ -12,29 +12,20 @@ public class Main {
         String [] userAnswer = new String[4];
         int tokenPosition;
 
-
+        userAnswer = UserAnswer.userInput();
 
 
         System.out.println("Color list: blue, yellow, green, red, orange");
         printAnswer(secretCode, userAnswer);
 
-        for(int i = 0; i < userAnswer.length; i++)
+        for(String i: userAnswer)
         {
-            secretCode.compareAnswerWithCode(userAnswer[i]);
+            secretCode.compareAnswerWithCode(i);
         }
         //System.out.println(secretCode.getSingleToken(3));
     }
 
-    public static String [] userInput(int position, String [] userAnswer) {
-        String usersInput;
-        Scanner input = new Scanner(System.in);
 
-        System.out.print("\n Enter a color for code position " + position + ": ");
-        usersInput = input.nextLine();
-        userAnswer[position - 1] = usersInput;
-
-        return userAnswer;
-    }
 
     public static void printAnswer(SecretCode secretCode, String [] userAnswer)
     {
