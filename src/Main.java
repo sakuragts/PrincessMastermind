@@ -1,40 +1,33 @@
 
 import java.util.Scanner;
-//test git commit
+
 public class Main {
 
     public static void main (String[] args) {
-        SecretCode  secretCode = new SecretCode();
-        Token [] tokenCode = new Token[4];
+        SecretCode secretCode = new SecretCode();
+        Token[] tokenCode = new Token[4];
         Token singleToken;
         String tokenColor;
         String singleAnswer;
-        String [] userAnswer = new String[4];
+        UserAnswer userAnswer = new UserAnswer();
         int tokenPosition;
 
+        userAnswer.makingUserAnswerList();
 
+        System.out.println(userAnswer);
 
-
+ /*
         System.out.println("Color list: blue, yellow, green, red, orange");
         printAnswer(secretCode, userAnswer);
 
-        for(int i = 0; i < userAnswer.length; i++)
+        for(String i: userAnswer)
         {
-            secretCode.compareAnswerWithCode(userAnswer[i]);
+            secretCode.compareAnswerWithCode(i);
         }
         //System.out.println(secretCode.getSingleToken(3));
     }
 
-    public static String [] userInput(int position, String [] userAnswer) {
-        String usersInput;
-        Scanner input = new Scanner(System.in);
 
-        System.out.print("\n Enter a color for code position " + position + ": ");
-        usersInput = input.nextLine();
-        userAnswer[position - 1] = usersInput;
-
-        return userAnswer;
-    }
 
     public static void printAnswer(SecretCode secretCode, String [] userAnswer)
     {
@@ -75,6 +68,7 @@ public class Main {
         return answerCompared;
 
         return true;
+    }*/
     }
-    */
+
 }
