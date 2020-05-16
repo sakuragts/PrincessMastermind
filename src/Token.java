@@ -4,21 +4,26 @@ public class Token {
 
     private String tokenColor;
 
+    private final String[] colors = {"blue", "yellow", "green", "red",
+            "orange"};
+
+    //Constructor
     public Token()
     {
         this.tokenColor = findColor();
     }
 
+    //Getter
     public String getTokenColor()
     {
         return this.tokenColor;
     }
 
+    //Class methods
     private int randomColor()
     {
         int intColor;
-        Random randomColor = new Random();
-        intColor = randomColor.nextInt(5);
+        intColor = new Random().nextInt(5);
         return intColor;
     }
 
@@ -26,9 +31,7 @@ public class Token {
     {
         int color = randomColor();
         String tokenColor;
-        String [] colors = {"blue", "yellow", "green", "red",
-                "orange"};
-        tokenColor = colors[color];
+        tokenColor = this.colors[color];
         return tokenColor;
     }
 

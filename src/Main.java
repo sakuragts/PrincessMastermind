@@ -4,6 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main (String[] args) {
+
         SecretCode secretCode = new SecretCode();
         Token[] tokenCode = new Token[4];
         Token singleToken;
